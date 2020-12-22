@@ -6,11 +6,11 @@ const output = [0,0,0,0,0,0,0,0,0]
 //input
 function getAmt(){
   let billAmt;
-  billAmt = readlineSync.question("Enter bill amount : ")
+  billAmt = readlineSync.question("Enter bill amount : ");
   return billAmt;
 }
 let billAmt = getAmt();
 //processing 
 
 //output
-console.log(billAmt)
+console.log(billAmt);
