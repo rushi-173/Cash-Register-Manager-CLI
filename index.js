@@ -46,3 +46,9 @@ else{
 
 
 //output
+console.log("Amount tobe returned is - ")
+for(i=0; i<output.length; i++){
+  if(output[i] > 0){
+    console.log(currencies[i] , " : " ,output[i]);
+  }
+}
