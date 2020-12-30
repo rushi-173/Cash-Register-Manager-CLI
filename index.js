@@ -18,6 +18,10 @@ function getCash(){
   console.log("Invalid Input. Enter again. \n");
   cash = getCash();                                                
   }
+  if(billAmt < cashGiven){
+  console.log("You have given less cash amount. Your total bill amount is - ",billAmt);
+  cash = getCash(); 
+  }
   return cash;
 }
 
