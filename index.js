@@ -1,8 +1,8 @@
 const readlineSync = require("readline-sync");
 //data
 const currencies = [1,5,10,20,100,500,2000]
-const output = [0,0,0,0,0,0,0,0,0]
-let billAmt,cashGiven;
+const output = [0,0,0,0,0,0,0]
+let billAmt,cashGiven,returnAmt;
 //input
 function getAmt(){
   let bill = readlineSync.question("Enter bill amount : ");
@@ -25,12 +25,24 @@ function getCash(){
   return cash;
 }
 
-billAmt = getAmt();
-cashGiven = getCash();
-
-//processing 
+billAmt = parseInt(getAmt());
+cashGiven = parseInt(getCash());
+returnAmt = cashGiven - billAmt;
+//processing 0
+if(returnAmt == 0){
+  console.log("No Amount to be returned.");
+}
+else{
+  while(returnAmt > 0 ){
+    for(i=currencies.length - 1; i>=0; i-- ){
+      if(returnAmt >= currencies[i]){
+        returnAmt = returnAmt - currencies[i];
+        output[i] += 1;
+        break;
+      }
+    }
+  }
+}
 
 
 //output
-console.log(billAmt);
-console.log(cashGiven);
